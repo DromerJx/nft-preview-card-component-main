@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    :root{
+      --soft-blue: hsl(215, 51%, 70%);
+      --cyan: hsl(178, 100%, 50%);
+      --dark-blue-main: hsl(217, 54%, 11%);
+      --dark-blue-card: hsl(216, 50%, 16%);
+      --dark-blue-line: hsl(215, 32%, 27%);
+      --white: hsl(0, 0%, 100%);
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+    body{
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    .body{
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100vh;
+      background: var(--dark-blue-main);
+    }
+    .card{
+      width: 350px;
+      height: 600px;
+      padding: 20px;
+      box-sizing: border-box;
+      background: var(--dark-blue-card);
+      border-radius: 12px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      box-shadow: 0px 30px 70px rgba(0, 0, 0, 0.1),
+                  30px 0px 70px rgba(0, 0, 0, 0.1),
+                  -30px 0px 70px rgba(0, 0, 0, 0.1);
+    }
+    .imagen-equilibrium{
+      width: 100%;
+      height: auto;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+    .figure{
+      display: grid;
+      place-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background-color: rgba(0, 255, 234, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .descripcion-equilibrium{
+      width: 100%;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      align-items: center;
+    }.descripcion-equilibrium > p:nth-child(1){
+      color: var(--white);
+      font-size: var(--lg);
+      margin: 0;
+      width: max-content;
+    }.descripcion-equilibrium > p:nth-child(1):hover{
+      color: var(--cyan);
+      cursor: pointer;
+    }.descripcion-equilibrium > p:nth-child(2){
+      color: var(--soft-blue);
+      margin: 0;
+      font-size: var(--md);
+    }
+    .price-time{
+      width: 100%;
+      height: 40px;
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      align-items: center;
+      gap: 8px;
+    }.price-time p{
+      margin: 0;
+    }.price-time > p:nth-child(2){
+      color: var(--cyan);
+      font-size: var(--sm);
+    }.price-time > p:nth-child(4){
+      color: var(--soft-blue);
+      font-size: var(--sm);
+    }
+    .creador-equilibrium{
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 8px;
+      border-top: 1px var(--dark-blue-line) solid;
+    }.creador-equilibrium p{
+      color: var(--soft-blue);
+    }
+    .creador{
+      color: var(--white);
+    }.creador:hover{
+      color: var(--cyan);
+      cursor: pointer;
+    }
+
+        /* - - - - I M A G E N E S - - - - */
+
+    .imagen-equilibrium > img:nth-child(1){
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .figure img{
+      width: 40px;
+    }
+    .imagen-equilibrium:hover .figure{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .creador-equilibrium img{
+      width: 28px;
+      border: var(--white) 1px solid;
+      border-radius: 50%;
+    }
+    @media (max-width:375px) {
+      .card{
+        width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="body">
+    <div class="card">
+      <div class="imagen-equilibrium">
+        <img src="./images/image-equilibrium.jpg" alt="equilibrium's image">
+        <figure class="figure">
+          <img src="./images/icon-view.svg" alt="eye">
+        </figure>
+      </div>
+      <div class="descripcion-equilibrium">
+        <p>Equilibrium #3429</p>
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div class="price-time">
+          <img src="./images/icon-ethereum.svg" alt="ethereum">
+          <p>0.041 ETH</p>
+          <img src="./images/icon-clock.svg" alt="clock">
+          <p>3 days left</p>
+        </div>
+      </div>
+      <div class="creador-equilibrium">
+        <img src="./images/image-avatar.png" alt="">
+        <p>Creation of <span class="creador">Jules Wyvern</span></p>
+      </div>
+    </div>
+
+  </div>
+  <!--
+<footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
+  -->
+  
+
+</body>
+</html>
